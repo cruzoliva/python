@@ -1,4 +1,4 @@
-def arithmetic_arrenger(problems, resolve):
+def arithmetic_arranger(problems, resolve):
 #problems = ["32 + 8", "1 + 3801", "9999 + 9999", "523 + 49"]
 #resolve = True
     linea1 = ""
@@ -62,4 +62,3 @@ def isInteger(number):
     except:
         return False 
 
-arithmetic_arrenger(["32 + 8", "1 - 3801", "9999 + 9999", "523 - 49"], True)
