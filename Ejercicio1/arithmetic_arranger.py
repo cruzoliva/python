@@ -1,10 +1,10 @@
 def arithmetic_arranger(problems, resolve):
 #problems = ["32 + 8", "1 + 3801", "9999 + 9999", "523 + 49"]
 #resolve = True
-    linea1 = ""
-    linea2 = ""
-    linea3 = ""
-    linea4 = ""
+    line1 = ""
+    line2 = ""
+    line3 = ""
+    line4 = ""
 
     if len(problems) > 5: 
         print("Error: Too many problems.")
@@ -45,15 +45,15 @@ def arithmetic_arranger(problems, resolve):
 
         #print(problem_det[0], problem_det[1], problem_det[2], result)
         cur_len = max_len + 2
-        linea1 = linea1 + ("".rjust(cur_len + 2, " ") + problem_det[0])[cur_len * -1:] + "    "
-        linea2 = linea2 + problem_det[1] + " " + ("".rjust(max_len, " ") + problem_det[2])[max_len * -1:] + "    "
-        linea3 = linea3 + "".rjust(cur_len, "-") + "    "
-        linea4 = linea4 + ("".rjust(cur_len + 2, " ") + str(result))[cur_len * -1:] + "    "
+        line1 = line1 + ("".rjust(cur_len + 2, " ") + problem_det[0])[cur_len * -1:] + "    "
+        line2 = line2 + problem_det[1] + " " + ("".rjust(max_len, " ") + problem_det[2])[max_len * -1:] + "    "
+        line3 = line3 + "".rjust(cur_len, "-") + "    "
+        line4 = line4 + ("".rjust(cur_len + 2, " ") + str(result))[cur_len * -1:] + "    "
 
-    print(linea1)
-    print(linea2)
-    print(linea3)
-    print(linea4)
+    print(line1)
+    print(line2)
+    print(line3)
+    print(line4)
 
 def isInteger(number):
     try:
