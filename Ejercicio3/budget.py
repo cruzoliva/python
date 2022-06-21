@@ -1,4 +1,8 @@
 
+from tokenize import Name
+from unicodedata import name
+
+
 class Category:
     name = ""
     ledger = []
@@ -20,6 +24,14 @@ class Category:
         if self.check_funds(amount):
             item = LedgerItem(amount * -1, description)
             self.ledger.append(item)
+            return True
+        else:
+            return False
+
+    def transfer(self, amount, category) -> bool:
+        if self.check_funds(amount):
+            self.withdraw(amount, f"Trasfer to {category.name}")
+            category.deposit(amount, f"Transfered from {self.name}")
             return True
         else:
             return False
@@ -52,12 +64,27 @@ class LedgerItem:
         self.description = Description
 
 
+#def create_spend_chart(categories, chart):
 
-cars = Category("Autos")
-cars.deposit(10000, "Inicial")
-pude = cars.withdraw(300, "nafta")
-pude = cars.withdraw(9000, "Seguro")
-pude = cars.withdraw(1000, "nafta")
-if pude == False:
-    print("No hay saldo")
-cars.get_balance()
+
+
+
+
+
+
+
+
+#cars = Category("Autos")
+#cars.deposit(10000, "Inicial")
+#pude = cars.withdraw(300, "nafta")
+#pude = cars.withdraw(900, "Seguro")
+#pude = cars.withdraw(100, "nafta")
+
+#clothes = Category("Ropa")
+#clothes.get_balance()
+
+#cars.transfer(30, clothes)
+#if pude == False:
+#    print("No hay saldo")
+#cars.get_balance()
+
