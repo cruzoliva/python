@@ -4,11 +4,11 @@ from unicodedata import name
 
 
 class Category:
-    name = ""
-    ledger = []
+    
     def __init__(self, Name) -> None:
         self.name = Name
-    
+        self.ledger = []
+
     def deposit(self, dep_amount, dep_description = ""):
         item = LedgerItem(dep_amount, dep_description)
         self.ledger.append(item)
@@ -20,7 +20,7 @@ class Category:
         
         return acum > Amount
 
-    def withdraw(self, amount, description) -> bool:
+    def withdraw(self, amount, description = "") -> bool:
         if self.check_funds(amount):
             item = LedgerItem(amount * -1, description)
             self.ledger.append(item)
@@ -56,9 +56,6 @@ class Category:
         print(lenName)
 
 class LedgerItem:
-    amount = 0
-    description = ""
-
     def __init__(self, Amount, Description) -> None:
         self.amount = Amount
         self.description = Description
