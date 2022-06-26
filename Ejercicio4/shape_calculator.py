@@ -21,26 +21,27 @@ class rectangle:
         return self.area
     
     #Calculo con los mismos datos el perimetro, diagonal y un picture que me muestre "*" según el ancho y alto
-    def get_perimeter(self, perimeter):
-        self.perimeter = 2 * width + 2 * height
+    def get_perimeter(self):
+        self.perimeter = 2 * self.width + 2 *self.height
         return self.perimeter
     
-    def et_diagonal(self, diagonal):
-        self.diagonal = (width ** 2 + height ** 2) ** .5
+    def get_diagonal(self):
+        self.diagonal = (self.width ** 2 + self.height ** 2) ** 0.5
         return self.diagonal
 
-    def get_picture(self, picture):
+    def get_picture(self):
         if self.widht > 50 or self.height > 50:
             print("Too big for picture.")
-        else:
-            for x in range(self.width):
-               for i in range(self.height):
-                    print("*", end = "") 
-                    return picture
+        picture =""
+        for x in range(self.width):
+            for i in range(self.height):
+                print("*", end = "/n") 
+                return picture
 
     #Me indica cauntas veces entra otra forma dentro de la forma ingresada
-    def get_amount_inside(self, ):
-        c
+    def get_amount_inside(self, other_shape):
+        return (self.width//other_shape.width)*(self.height//other_shape.height)
+    
 
     #Si una de las instancias es un str debe verse así 
     def __str__(self) -> str:
